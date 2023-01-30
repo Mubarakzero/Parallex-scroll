@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background: #070c29;
+    position: relative;
+}
+img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
