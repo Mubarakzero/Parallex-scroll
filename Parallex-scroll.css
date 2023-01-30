@@ -2,15 +2,72 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 main{
     width: 100%;
     height: 100vh;
-    background: #070c29;
+    background: #020620;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 img{
     position: absolute;
     width: 100%;
     height: 100vh;
+    z-index: 2;
+}
+#moon{
+    mix-blend-mode: screen;
+}
+#stars{
+    z-index: 1;
+}
+#mountains_behind{
+    z-index: 3;
+}
+#mountains_front{
+    z-index: 5;
+}
+#text{
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+h1{
+    font-size: 60px;
+}
+a{
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 10px;
+    background: #17268a;
+    border-radius: 10px;
+    color: #fff;
+    margin: 30px auto;
+}
+section{
+    padding: 50px 10px 20px;
+    background: #2c0a36;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+button{
+    width: 100%;
+    height: 30px;
+    margin: 30px auto;
+    font-size: 20px;
+    background: #020620;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
