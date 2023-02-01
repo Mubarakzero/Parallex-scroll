@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 main{
     width: 100%;
@@ -12,13 +13,18 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 img{
     position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
     width: 100%;
     height: 100vh;
     z-index: 2;
+    overflow-y: hidden;
 }
 #moon{
     mix-blend-mode: screen;
@@ -30,7 +36,7 @@ img{
     z-index: 3;
 }
 #mountains_front{
-    z-index: 5;
+    z-index: 4;
 }
 #text{
     z-index: 4;
@@ -43,17 +49,18 @@ img{
 h1{
     font-size: 60px;
 }
-a{
+#btn{
     text-transform: capitalize;
     text-decoration: none;
     padding: 10px;
-    background: #17268a;
-    border-radius: 10px;
-    color: #fff;
+    background: #fff;
+    border-radius: 30px;
+    color: #020620;
     margin: 30px auto;
 }
 section{
-    padding: 50px 10px 20px;
+    position: relative;
+    padding: 150px 10px 20px;
     background: #2c0a36;
     color: #fff;
     display: flex;
@@ -61,7 +68,16 @@ section{
     justify-content: center;
     flex-direction: column;
 }
-button{
+section::before{
+    content: '';
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: -100px;
+    z-index: 1000;
+    background: linear-gradient(to top, #2c0a36, transparent);
+}
+.button{
     width: 100%;
     height: 30px;
     margin: 30px auto;
@@ -70,4 +86,7 @@ button{
     border: none;
     color: #fff;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0;
 }

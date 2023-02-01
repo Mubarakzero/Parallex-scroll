@@ -10,23 +10,21 @@
 </head>
 
 <body>
-    <h1 style="position: absolute; top: 50%; left: 50%; color: yellow; z-index: 100; transform: rotate(45deg);">
-        Pending
-    </h1>
-    <div class="container">
-        <main>
+        <div class="container">
+        <main id="main">
+            <img src="images/stars.png" id="stars">
             <img src="images/moon.png" id="moon">
             <img src="images/mountains_behind.png" id="mountains_behind">
-            <img src="images/mountains_front.png" id="mountains_front">
-            <img src="images/stars.png" id="stars">
             <div id="text">
                 <h1>Welcome</h1>
                 <div class="line"></div>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, sit!</p>
-                <a href="#">Explore</a>
+                <a href="#sec" id="btn">Explore</a>
             </div>
+            <img src="images/mountains_front.png" id="mountains_front">
         </main>
-        <section>
+        <section id="sec">
+            <h1>Parallex Scroll</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quo sed harum cupiditate molestiae animi
                 error mollitia, dolore blanditiis vel consequatur odio corrupti quod explicabo repellendus vero
                 doloribus officia laudantium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea necessitatibus
@@ -119,25 +117,30 @@
                 Praesentium nemo asperiores laboriosam laudantium quam, excepturi totam aliquam! Reiciendis mollitia
                 magnam dolorum, nobis praesentium neque eligendi!
             </p>
-            <button>Let's Go</button>
+            <a href="#main" class="button">Let's Go</a>
         </section>
     </div>
 
 
 
 <script>
-    var moon = document.getElementById("moon");
-    var mountains_front = document.getElementById("mountains_front");
-    var mountains_behind = document.getElementById("mountains_behind");
-    var stars = document.getElementById("stars");
-    var text = document.getElementById("text");
+    let moon = document.getElementById("moon");
+    let mountains_front = document.getElementById("mountains_front");
+    let mountains_behind = document.getElementById("mountains_behind");
+    let stars = document.getElementById('stars');
+    let text = document.getElementById("text");
 
 
     window.addEventListener( "scroll", function(){
-        let offset = window.pageYOffset;
-        console.log("offset:" + offset)
-        console.log("offset:" + offset)
-        stars.style.width = offset * 7 + "px;"
+        let offset = window.scrollY;
+        console.log("offset:" + scrollY)
+        console.log("offset:" + scrollY*0.7)
+        stars.style.left = offset * 0.25 + "px"
+        moon.style.top = offset * 1.25 + "px"
+        mountains_behind.style.top = offset * 0.5 + "px"
+        mountains_front.style.top = offset * 0 + "px"
+        text.style.marginRight = offset * 5 + "px"
+        text.style.marginTop= offset * 2 + "px"
     })
 </script>
 </body>
